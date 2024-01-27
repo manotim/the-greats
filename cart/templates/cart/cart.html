@@ -15,9 +15,9 @@
         <tbody>
          
           <tr>
-            <th scope="row"><h3><strong>Items: {{cart.quantity}} </strong></h3></th>
+            <th scope="row"><h3><strong>Items: {{cart.cartquantity}} </strong></h3></th>
             <td></td>
-            <td><h3><strong>Total: $0</strong></h3></td>
+            <td><h3><strong>Total: ${{cart.grandtotal | floatformat:2}}</strong></h3></td>
             <!-- <td></td> -->
             
             <td>

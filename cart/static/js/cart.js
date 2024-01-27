@@ -5,7 +5,7 @@ for(let i = 0; i < btns.length; i++){
     let action = e.target.dataset.action
     console.log(product_id)
     if(user=='AnonymousUser'){
-      console.log('Ypu are not signed in')
+      console.log('You are not signed in')
     }
 
     else{
@@ -19,23 +19,23 @@ function addToCart(p_id, act){
   const data = {product_id: p_id, action: act};
 
 
-let url = '/updatecart'
-fetch(url, {
-  method: 'POST', // or 'PUT'
-  headers: {
-    'Content-Type': 'application/json',
-    'X-CSRFToken': csrftoken
-  },
-  body: JSON.stringify(data),
-})
-.then(response => response.json())
-.then(data => {
-  console.log('Success:', data);
-  document.getElementById('cart').innerHTML = `<h4>${data.quantity}</h4>`
-})
-.catch((error) => {
-  console.error('Error:', error);
-});
+  let url = '/updatecart'
+  fetch(url, {
+    method: 'POST', // or 'PUT'
+    headers: {
+      'Content-Type': 'application/json',
+      'X-CSRFToken': csrftoken
+    },
+    body: JSON.stringify(data),
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log('Success:', data);
+    document.getElementById('cart').innerHTML = `<h4>${data.quantity}</h4>`
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
 
 }
 
